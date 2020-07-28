@@ -48,7 +48,7 @@ modded class ExpansionHelipad
 			int closestIndexRef = -1;
 			ref array<Object> objects = new array<Object>;
 			ref array<CargoBase> proxy = new array<CargoBase>;
-			GetGame().GetObjectsAtPosition(this.GetPosition(), GetSnapHeliSettings().Radius, objects, proxy);
+			GetGame().GetObjectsAtPosition3D(this.GetPosition(), GetSnapHeliSettings().Radius, objects, proxy);
 			for ( int i = 0; i < objects.Count(); i++ ) 
 			{
 				Object obj = objects.Get(i);
