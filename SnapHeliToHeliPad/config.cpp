@@ -9,7 +9,6 @@ class CfgPatches
 		};
 	};
 };
-
 class CfgMods
 {
 	class SnapHeliToHeliPad
