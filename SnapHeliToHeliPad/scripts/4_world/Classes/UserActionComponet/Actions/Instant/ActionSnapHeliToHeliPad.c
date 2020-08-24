@@ -1,4 +1,4 @@
-class ActionSnapHeliToHeliPad: ActionInteractBase
+class ActionSnapHeliToHeliPad extends ActionInteractBase
 {
 
 	void ExpansionActionOpenTraderMenu()
@@ -44,4 +44,4 @@ class ActionSnapHeliToHeliPad: ActionInteractBase
 			helipad.ActionFindClosestHeli();
 		}
 	}
-}
+};

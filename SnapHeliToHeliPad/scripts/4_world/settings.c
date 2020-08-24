@@ -50,7 +50,7 @@ class SnapHeliSettings
 		VirtualHelipad temp = new ref VirtualHelipad(x, y, z);
 		VirtualHelipads.Insert(temp);
 	}
-}
+};
 
 //Helper function to return Config
 static ref SnapHeliSettings GetSnapHeliSettings()
@@ -61,4 +61,4 @@ static ref SnapHeliSettings GetSnapHeliSettings()
 		m_SnapHeliSettings.Load();
 	}
 	return m_SnapHeliSettings;
-}
+};

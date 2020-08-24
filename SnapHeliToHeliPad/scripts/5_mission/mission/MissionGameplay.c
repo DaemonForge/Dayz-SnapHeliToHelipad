@@ -12,4 +12,4 @@ modded class MissionGameplay extends MissionBase
 		if ( !ctx.Read( data ) ) return;
 		m_SnapHeliSettings = data.param1;
 	}
-}
+};

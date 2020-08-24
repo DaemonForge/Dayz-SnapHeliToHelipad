@@ -1,4 +1,4 @@
-modded class ExpansionHelipad: ExpansionBaseBuilding 
+modded class ExpansionHelipad extends ExpansionBaseBuilding 
 {
 	protected bool m_AwaitingSnap;
 	
@@ -116,4 +116,4 @@ modded class ExpansionHelipad: ExpansionBaseBuilding
 			}
 		}
 	}
-}
+};

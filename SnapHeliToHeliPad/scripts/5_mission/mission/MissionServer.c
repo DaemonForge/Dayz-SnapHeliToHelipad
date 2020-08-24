@@ -32,5 +32,5 @@ modded class MissionServer extends MissionBase
 		}
 	}
 	
-}
+};
 
