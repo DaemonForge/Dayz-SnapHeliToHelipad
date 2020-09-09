@@ -1,16 +1,18 @@
-static string SnapHeliPATH = "$profile:\\SnapHeli.json";
 ref SnapHeliSettings m_SnapHeliSettings
 class SnapHeliSettings
 { 
+	protected static string SnapHeliPATH = "$profile:\\SnapHeli.json";
+	
 	//Default Values
-	string ConfigVersion = "2";
+	string ConfigVersion = "3";
 	
 	bool EnableOnHeliPad = true;
 	bool EnableSnapHeliAction = false;
-	
+	bool CanCraftHeliPadKit = false;
+	float InitSnapDelaySec = 4.5;
 	float Radius = 18;
 	
-	ref array< ref VirtualHelipad > VirtualHelipads = new ref array< ref VirtualHelipad >;
+	ref array< ref VHelipad > VirtualHelipads = new ref array< ref VHelipad >;
 	
 	float Mh6HeightAdjustment = 0.3;
 	float Uh1hHeightAdjustment = 3.4;
@@ -26,13 +28,10 @@ class SnapHeliSettings
 		if (FileExist(SnapHeliPATH)) //If config exist load File
 		{
 	        JsonFileLoader<SnapHeliSettings>.JsonLoadFile(SnapHeliPATH, this);
-			if ( ConfigVersion != "2"){
-				EnableSnapHeliAction = false;
-				
-				Mh6HeightAdjustment = 0.5;
-				Uh1hHeightAdjustment = 3.5;
-				MerlinHeightAdjustment = 4.7;
-				OtherHeightAdjustment = 3.7;
+			if ( ConfigVersion != "3"){
+				ConfigVersion = "3";
+				InitSnapDelaySec = 4.5;
+				CanCraftHeliPadKit = false;
 				JsonFileLoader<SnapHeliSettings>.JsonSaveFile(SnapHeliPATH, this);
 			}
 		}else{ //File does not exist create file
@@ -47,9 +46,24 @@ class SnapHeliSettings
 	}
 	
 	void AddVirtualHelipad( float x, float y, float z){
-		VirtualHelipad temp = new ref VirtualHelipad(x, y, z);
+		VHelipad temp = new ref VHelipad(x, y, z);
 		VirtualHelipads.Insert(temp);
 	}
+};
+
+class VHelipad 
+{
+	float X = 0; 
+	float Y = 0;
+	float Z = 0;
+	
+	void VHelipad( float x, float y, float z)
+	{
+		X = x;
+		Y = y;
+		Z = z;
+	}
+	
 };
 
 //Helper function to return Config

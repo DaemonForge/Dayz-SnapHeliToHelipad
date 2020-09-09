@@ -7,7 +7,8 @@ modded class MissionServer extends MissionBase
 		if (GetSnapHeliSettings().VirtualHelipads){
 			if (GetSnapHeliSettings().VirtualHelipads.Count() > 0){
 				for(int i = 0; i < GetSnapHeliSettings().VirtualHelipads.Count(); ++i){
-					GetSnapHeliSettings().VirtualHelipads.Get(i).Init();
+					ref VirtualHelipad temp = new ref VirtualHelipad(GetSnapHeliSettings().VirtualHelipads.Get(i));
+					temp.Init();
 				}
 			}
 		}

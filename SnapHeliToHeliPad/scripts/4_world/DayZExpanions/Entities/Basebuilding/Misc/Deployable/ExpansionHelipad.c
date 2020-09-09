@@ -20,7 +20,7 @@ modded class ExpansionHelipad extends ExpansionBaseBuilding
 				Print( "[SnapHeliToHeliPad] " + GetType() + " init at " + GetPosition());
 				m_AwaitingSnap = true;
 				SetSynchDirty();
-				GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater( this.FindClosestHeli, 4800, false );
+				GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater( this.FindClosestHeli, GetSnapHeliSettings().InitSnapDelaySec * 1000, false );
 			}
 		}
 	}

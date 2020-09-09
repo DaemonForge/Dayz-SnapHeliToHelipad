@@ -3,10 +3,6 @@ class CfgPatches
 	class SnapHeliToHeliPad
 	{
 		requiredVersion=0.1;
-		requiredAddons[]={
-			"DZ_Data",
-			"DayZExpansion_Scripts"
-		};
 	};
 };
 class CfgMods
@@ -20,9 +16,17 @@ class CfgMods
         authorID="0";
         version="0.1";
         type="mod";
-	    dependencies[]={ "World", "Mission"};
+	    dependencies[]={ "Game", "World", "Mission"};
 	    class defs
 	    {
+			class gameScriptModule
+            {
+				value = "";
+                files[]={
+					"SnapHeliToHeliPad/scripts/3_Game"
+					};
+            };
+			
 			class worldScriptModule
             {
                 files[]={ 

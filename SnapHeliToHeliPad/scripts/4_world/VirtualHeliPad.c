@@ -4,20 +4,18 @@ class VirtualHelipad
 	float Y = 0;
 	float Z = 0;;
 	
-	void VirtualHelipad( float x, float y, float z)
+	void VirtualHelipad(ref VHelipad vPad)
 	{
-		X = x;
-		Y = y;
-		Z = z;
+		X = vPad.X;
+		Y = vPad.Y;
+		Z = vPad.Z;
 	}
 	
 	void Init(){
 		if(GetGame().IsServer()){
-			GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater( this.FindClosestHeli, 4000, false, NULL );
+			GetGame().GetCallQueue( CALL_CATEGORY_SYSTEM ).CallLater( this.FindClosestHeli, GetSnapHeliSettings().InitSnapDelaySec * 1000, false, NULL );
 		}
 	}
-	
-	
 	
 	vector GetPosition(){
 		return Vector( X, Y, Z );

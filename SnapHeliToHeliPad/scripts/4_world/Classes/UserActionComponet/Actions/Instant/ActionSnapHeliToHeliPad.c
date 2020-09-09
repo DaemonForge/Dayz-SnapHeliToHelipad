@@ -9,7 +9,7 @@ class ActionSnapHeliToHeliPad extends ActionInteractBase
 	override void CreateConditionComponents()  
 	{	
 		m_ConditionItem = new CCINone;
-		m_ConditionTarget = new CCTObject(UAMaxDistances.BASEBUILDING);
+		m_ConditionTarget = new CCTNonRuined(10);
 	}
 
 	override string GetText()

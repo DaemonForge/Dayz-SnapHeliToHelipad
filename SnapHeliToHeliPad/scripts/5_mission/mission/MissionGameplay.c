@@ -1,8 +1,7 @@
 modded class MissionGameplay extends MissionBase
 {
-	override void OnInit()
+	void MissionGameplay()
 	{
-		super.OnInit();
 		GetRPCManager().AddRPC( "SHTHP", "RPCSnapHeliToHeliPadSettings", this, SingeplayerExecutionType.Both );
 	}
 	
