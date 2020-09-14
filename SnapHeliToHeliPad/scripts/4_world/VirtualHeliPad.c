@@ -26,7 +26,7 @@ class VirtualHelipad
 	}
 	
 	void FindClosestHeli(){
-		if(GetGame().IsServer()){
+		if (GetGame().IsServer()){
 			float closestDisRef = GetSnapHeliSettings().Radius + 1;
 			float closestDisDefault = closestDisRef;
 			ExpansionHelicopterScript closestHeliRef; 
