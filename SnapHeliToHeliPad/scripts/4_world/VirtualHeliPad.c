@@ -30,8 +30,8 @@ class VirtualHelipad
 			float closestDisRef = GetSnapHeliSettings().Radius + 1;
 			float closestDisDefault = closestDisRef;
 			ExpansionHelicopterScript closestHeliRef; 
-			ref array<Object> objects = new array<Object>;
-			ref array<CargoBase> proxy = new array<CargoBase>;
+			array<Object> objects = new array<Object>;
+			array<CargoBase> proxy = new array<CargoBase>;
 			GetGame().GetObjectsAtPosition3D(this.GetPosition(), GetSnapHeliSettings().Radius, objects, proxy);
 			for ( int i = 0; i < objects.Count(); i++ ) 
 			{

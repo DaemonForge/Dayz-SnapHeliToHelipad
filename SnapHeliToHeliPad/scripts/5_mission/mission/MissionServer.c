@@ -7,7 +7,7 @@ modded class MissionServer extends MissionBase
 		if (GetSnapHeliSettings().VirtualHelipads){
 			if (GetSnapHeliSettings().VirtualHelipads.Count() > 0){
 				for(int i = 0; i < GetSnapHeliSettings().VirtualHelipads.Count(); ++i){
-					ref VirtualHelipad temp = new ref VirtualHelipad(GetSnapHeliSettings().VirtualHelipads.Get(i));
+					ref VirtualHelipad temp = new VirtualHelipad(GetSnapHeliSettings().VirtualHelipads.Get(i));
 					temp.Init();
 				}
 			}
@@ -20,8 +20,8 @@ modded class MissionServer extends MissionBase
 		if ( identity )
 		{
 			string playerID = identity.GetPlainId();
-			GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLaterByName(this, "SendSnapHeliToHeliPadSettings", 1500, false, new Param1<ref PlayerBase >( player ));
-			GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLaterByName(this, "SendSnapHeliToHeliPadSettings", 3500, false, new Param1<ref PlayerBase >( player ));
+			GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLaterByName(this, "SendSnapHeliToHeliPadSettings", 1500, false, new Param1<PlayerBase >( player ));
+			GetGame().GetCallQueue(CALL_CATEGORY_SYSTEM).CallLaterByName(this, "SendSnapHeliToHeliPadSettings", 3500, false, new Param1<PlayerBase >( player ));
 		}
 	}
 			

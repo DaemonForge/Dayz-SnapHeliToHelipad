@@ -12,7 +12,7 @@ class SnapHeliSettings
 	float InitSnapDelaySec = 4.5;
 	float Radius = 18;
 	
-	ref array< ref VHelipad > VirtualHelipads = new ref array< ref VHelipad >;
+	ref array< ref VHelipad > VirtualHelipads = new array< ref VHelipad >;
 	
 	float Mh6HeightAdjustment = 0.3;
 	float Uh1hHeightAdjustment = 3.4;
@@ -46,7 +46,7 @@ class SnapHeliSettings
 	}
 	
 	void AddVirtualHelipad( float x, float y, float z){
-		VHelipad temp = new ref VHelipad(x, y, z);
+		VHelipad temp = new VHelipad(x, y, z);
 		VirtualHelipads.Insert(temp);
 	}
 };
@@ -67,7 +67,7 @@ class VHelipad
 };
 
 //Helper function to return Config
-static ref SnapHeliSettings GetSnapHeliSettings()
+static SnapHeliSettings GetSnapHeliSettings()
 {
 	if (!m_SnapHeliSettings)
 	{
